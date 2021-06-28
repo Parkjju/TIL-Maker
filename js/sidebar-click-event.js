@@ -1,15 +1,9 @@
-const sidebarGroup = document.getElementsByClassName("sidebar-group");
-
-const CLICKED_CLASS = "open";
-
-function handleClick(CL) {
-  const check = CL.classList.contains(CLICKED_CLASS);
-  if(!check){
-    CL.classList.add(CLICKED_CLASS);
+function rotate(e) {
+  const name = "down";
+  a = e.children;
+  if (a[1].classList.contains(name)) {
+    a[1].classList.remove(name);
+  } else {
+    a[1].classList.add(name);
   }
-  else{
-    CL.classList.remove(CLICKED_CLASS);
-  }
-
 }
-

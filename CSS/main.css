@@ -170,19 +170,8 @@ section:last-child {
 }
 
 /* rotate animation */
-@keyframes rotateRight {
-  from {
-    transform: rotateX(0);
-  }
-  to {
-    transform: rotateX(90deg);
-  }
-}
 
-.open {
-  animation: rotateRight 0.5s ease-in-out;
-}
-
+/* collapse definition */
 .sidebar-group--list {
   display: flex;
 }
@@ -200,4 +189,9 @@ section:last-child {
   font-size: 1.1rem;
   border: none;
   height: 2rem;
+}
+
+/* animation */
+.down {
+  transform: rotate(90deg);
 }
