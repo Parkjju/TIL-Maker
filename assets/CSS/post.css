@@ -1,0 +1,10 @@
+.main-post {
+  box-sizing: border-box;
+  width: 100%;
+  padding-top: 1.5rem;
+  padding-left: 20%;
+  display: flex;
+  position: relative;
+  left: 30rem;
+  top: 3.6rem;
+}

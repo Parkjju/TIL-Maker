@@ -86,10 +86,6 @@
   top: 3.6rem;
 }
 
-/* 좌측 메뉴바 화살표회전 애니메이션 */
-.sidebar-group: {
-}
-
 /* 타이틀메뉴 바깥경계박스 */
 .sidebar-group {
   height: 2.3rem;
@@ -189,6 +185,12 @@ section:last-child {
   font-size: 1.1rem;
   border: none;
   height: 2rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+.card-body:hover {
+  color: #3eaf7c;
+  cursor: pointer;
 }
 
 /* animation */
