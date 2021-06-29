@@ -1,0 +1,33 @@
+Algorithm:
+  name: Algorithm
+  description: False
+CSS:
+  name: CSS
+  description: False
+DataStructure:
+  name: DataStructure
+  description: False
+Git:
+  name: Git
+  description: False
+HTML:
+  name: HTML
+  description: False
+javascript:
+  name: javascript
+  description: False
+Python:
+  name: Python
+  description: False
+Tools:
+  name: Tools
+  description: False
+CS:
+  name: CS
+  description: False
+Django:
+  name: Django
+  description: False
+MonthlyILearned:
+  name: MonthlyILearned
+  description: False

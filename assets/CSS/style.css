@@ -17,3 +17,12 @@ body {
   box-sizing: border-box;
   width: 100%;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: var(--title-color);
+}
