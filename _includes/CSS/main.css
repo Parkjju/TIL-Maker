@@ -8,6 +8,8 @@
   margin: 0;
   top: 0;
   left: 0;
+  z-index: 1;
+  background-color: white;
 }
 
 /* TIL 타이틀 */
