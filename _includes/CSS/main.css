@@ -8,8 +8,6 @@
   margin: 0;
   top: 0;
   left: 0;
-  z-index: 1;
-  background-color: white;
 }
 
 /* TIL 타이틀 */
@@ -189,6 +187,7 @@ section:last-child {
   height: 2rem;
   box-sizing: border-box;
   width: 100%;
+  font-size: 0.9rem;
 }
 .card-body:hover {
   color: #3eaf7c;
