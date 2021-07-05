@@ -8,6 +8,8 @@
   margin: 0;
   top: 0;
   left: 0;
+  z-index: 1;
+  background-color: white;
 }
 
 /* TIL 타이틀 */
@@ -16,6 +18,7 @@
   font-weight: 400;
   position: relative;
   left: 1.5rem;
+  cursor: pointer;
 }
 /* 오른쪽 검색창 + 깃헙링크 구현 */
 .main_bar--right {
@@ -121,10 +124,10 @@ section:last-child {
   padding-top: 1.5rem;
   padding-left: 20%;
   box-sizing: border-box;
-  width: 60%;
+  width: 70%;
   position: relative;
   top: 3.6rem;
-  left: 20rem;
+  left: 13rem;
 }
 
 .main-page--title {
@@ -134,10 +137,12 @@ section:last-child {
 }
 
 .line {
-  background-color: burlywood;
-  height: 1.5rem;
+  background-color: var(--line-color);
+  height: 1rem;
   box-sizing: border-box;
   width: 100%;
+  margin-top: 0.6rem;
+  margin-bottom: 0.6rem;
 }
 
 /* info container */

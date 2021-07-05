@@ -1,13 +1,5 @@
-<main class="main-page">
-  <h1 class="main-page--title">Today I<br />Learned</h1>
+<main class="main-post">
+  <h1 class="main-post--title">{{page.title}}</h1>
   <div class="line"></div>
-  <div class="info-container">
-    <p class="info-container--name">Parkjju's TIL</p>
-    <p
-      onclick="window.open('https://github.com/Parkjju')"
-      class="info-container--link"
-    >
-      Github
-    </p>
-  </div>
+  <section class="main-post--content">{{content}}</section>
 </main>
