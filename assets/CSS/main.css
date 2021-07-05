@@ -198,3 +198,7 @@ section:last-child {
 .down {
   transform: rotate(90deg);
 }
+
+.active {
+  color: var(--title-color);
+}

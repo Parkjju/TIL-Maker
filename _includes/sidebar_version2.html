@@ -1,0 +1,197 @@
+<div class="menu-bar">
+  <ul>
+    {% if page.url == "/index.html" or page.url == "/" %}
+    <li class="chapter active" data-level="1.1" data-path="{{site.baseurl}}">
+      <a href="{{site.baseurl}}"> {{ site.title | escape }} </a>
+    </li>
+    {% else %}
+
+    <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}">
+      <a href="{{site.baseurl}}"> {{ site.title | escape }} </a>
+    </li>
+    {% endif %}
+    <li
+      data-bs-toggle="collapse"
+      href="#collapse1"
+      aria-expanded="false"
+      aria-controls="collapse1"
+      onclick="rotate(this)"
+      role="menuitem"
+    >
+      <span class="sidebar-heading--name">개발 기록</span>
+      <i class="fas fa-caret-right fa-xs"></i>
+    </li>
+    <ul class="collapse" id="collapse1">
+      <li class="card card-body">
+        <a href="./python" aria-current="page">Python 강좌(1) - Python 기본</a>
+      </li>
+      <li class="card card-body">
+        <a href="./pythonHard" target="_self"
+          >Python 강좌(2) - Python 제어문
+        </a>
+      </li>
+    </ul>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse2"
+        aria-expanded="false"
+        aria-controls="collapse2"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Daily CS</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse2">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse3"
+        aria-expanded="false"
+        aria-controls="collapse3"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse3">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse4"
+        aria-expanded="false"
+        aria-controls="collapse4"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse4">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse5"
+        aria-expanded="false"
+        aria-controls="collapse5"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse5">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse6"
+        aria-expanded="false"
+        aria-controls="collapse6"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse6">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse7"
+        aria-expanded="false"
+        aria-controls="collapse7"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse7">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse8"
+        aria-expanded="false"
+        aria-controls="collapse8"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse8">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse9"
+        aria-expanded="false"
+        aria-controls="collapse9"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse9">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse10"
+        aria-expanded="false"
+        aria-controls="collapse10"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Git</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse10">
+      <div class="card card-body">Hello</div>
+      <div class="card card-body">Hello2</div>
+    </div>
+  </ul>
+</div>
