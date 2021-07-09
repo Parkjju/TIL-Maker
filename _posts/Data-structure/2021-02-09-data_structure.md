@@ -79,7 +79,7 @@ author: parkjju
 
 - T(n)에서 실제로 영향력을 끼치는 부분을 가리켜 빅-오(Big-Oh)라고 한다.
 
-<img src="/assets/images/tn.jpg" width="50%" height="75%"></img>
+<img src="/assets/images/tn.jpg" width="50%" height="75%"/>
 
 > [출처](http://www.orentec.co.kr/jaryosil/DA_ST_1/add_form1.php)
 
@@ -89,7 +89,7 @@ author: parkjju
 
   - T(n)=n^2+2\*n+9 => O(n^2)
 
-<img src="/assets/images/on.jpg" height="75%" width="75%"></img>
+<img src="/assets/images/on.jpg" height="75%" width="75%"/>
 
 > 출처 - http://www.orentec.co.kr/jaryosil/DA_ST_1/add_form1.php
 
@@ -110,4 +110,4 @@ author: parkjju
   - "f(n)<=Cg(n)을 만족하는 두 개의 상수 C와 K가 존재하면, " => n>=12인 n을 예시로 들어서, n=12일 때 5 *12^2+100 <= C *12^2를 만족하는 C는 존재한다.
   - f(n)의 빅-오는 O(g(n))이다. => 5n^2+100의 빅-오는 O(g(n))이다.
 
-<img src="/assets/images/examp.jpg" width="50%" height="50%"></img>
+<img src="/assets/images/examp.jpg" width="50%" height="50%"/>

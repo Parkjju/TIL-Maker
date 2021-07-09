@@ -197,7 +197,7 @@ remove(key):
   2. collision resolution method
   3. load factor: n/m -> m: hash table 사이즈 (slot 갯수) , n: hash table에 저장된 item 갯수.
      - set, remove, search 등 함수에 대해 그래프를 그려 비교할 수 있음.
-       <img src="../Data_structure/images/graph.jpg" height="40%" width="40%"/>
+       <img src="/assets/images/graph.jpg" height="40%" width="40%"/>
      - 또는, 함수를 돌면서 발생한 collision횟수를 저장된 slot의 개수인 n으로 나누어 충돌 비율 비교를 통해 hash function에 대한 성능평가를 진행.
 
 - **m>=2n**, 즉 최소 50%이상 빈 슬롯을 유지한다면 cluster의 사이즈가 O(1)로 형성된다. -> set, remove, search를 O(1)에 사용할 수 있게된다는 의미임.

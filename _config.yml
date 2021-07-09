@@ -106,6 +106,8 @@ permalink: /:title
 feed:
   path: feed.xml
 
+gems: [jekyll-giphy]
+
 # Travis-CI 설정입니다.
 # 자동화
 safe: False

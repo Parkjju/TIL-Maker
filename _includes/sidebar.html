@@ -1,27 +1,81 @@
 <div class="menu-bar">
   <ul>
-    <li
-      class="sidebar-group sidebar-heading"
-      data-bs-toggle="collapse"
-      href="#collapse1"
-      aria-expanded="false"
-      aria-controls="collapse1"
-      onclick="rotate(this)"
-      role="menuitem"
-    >
-      <span class="sidebar-heading--name">개발 기록</span>
-      <i class="fas fa-caret-right fa-xs"></i>
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#MIL"
+        aria-expanded="false"
+        aria-controls="MIL"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Monthly I Learned</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
     </li>
-    <ul class="collapse" id="collapse1">
-      <li class="card card-body">
-        <a href="./python" aria-current="page">Python 강좌(1) - Python 기본</a>
-      </li>
-      <li class="card card-body">
-        <a href="./pythonHard" target="_self"
-          >Python 강좌(2) - Python 제어문
-        </a>
-      </li>
-    </ul>
+    <div class="collapse" id="MIL">
+      <div class="card card-body">
+        <a href="./21July" target="_self">2021.07</a>
+      </div>
+    </div>
+    <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#collapse5"
+        aria-expanded="false"
+        aria-controls="collapse5"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">Computer Science</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="collapse5">
+      <div class="card card-body">
+        <a href="./docker" target="_self">Docker란?</a>
+      </div>
+      <div class="card card-body">
+        <a href="./domain" target="_self">Domain이란</a>
+      </div>
+      <div class="card card-body">
+        <a href="./serverless" target="_self">Serverless</a>
+      </div>
+      <div class="card card-body">
+        <a href="./library" target="_self">library vs framework</a>
+      </div>
+      <div class="card card-body">
+        <a href="./api" target="_self">API 란?</a>
+      </div>
+      <div class="card card-body">
+        <a href="./devops" target="_self">devops 정리</a>
+      </div>
+      <div class="card card-body">
+        <a href="./web_request" target="_self">web요청과 응답과정</a>
+      </div>
+      <div class="card card-body">
+        <a href="./block-chain" target="_self"
+          >nomad coders 블록체인 시리즈 총정리</a
+        >
+      </div>
+      <div class="card card-body">
+        <a href="./begin" target="_self">coursera series - Digital Logic</a>
+      </div>
+      <div class="card card-body">
+        <a href="./Module-Introduction" target="_self"
+          >coursera series - Hardware</a
+        >
+      </div>
+      <div class="card card-body">
+        <a href="./OS" target="_self">coursera series - OS</a>
+      </div>
+      <div class="card card-body">
+        <a href="./networking" target="_self">coursera series - networking</a>
+      </div>
+      <div class="card card-body">
+        <a href="./software" target="_self">coursera series - software</a>
+      </div>
+    </div>
 
     <li class="sidebar-group" role="menuitem">
       <p
@@ -370,77 +424,53 @@
       <p
         class="sidebar-heading"
         data-bs-toggle="collapse"
-        href="#collapse5"
-        aria-expanded="false"
-        aria-controls="collapse5"
-        onclick="rotate(this)"
-      >
-        <span class="sidebar-heading--name">Computer Science</span>
-        <i class="fas fa-caret-right fa-xs"></i>
-      </p>
-    </li>
-    <div class="collapse" id="collapse5">
-      <div class="card card-body">
-        <a href="./docker" target="_self">Docker란?</a>
-      </div>
-      <div class="card card-body">
-        <a href="./domain" target="_self">Domain이란</a>
-      </div>
-      <div class="card card-body">
-        <a href="./serverless" target="_self">Serverless</a>
-      </div>
-      <div class="card card-body">
-        <a href="./library" target="_self">library vs framework</a>
-      </div>
-      <div class="card card-body">
-        <a href="./api" target="_self">API 란?</a>
-      </div>
-      <div class="card card-body">
-        <a href="./devops" target="_self">devops 정리</a>
-      </div>
-      <div class="card card-body">
-        <a href="./web_request" target="_self">web요청과 응답과정</a>
-      </div>
-      <div class="card card-body">
-        <a href="./block-chain" target="_self"
-          >nomad coders 블록체인 시리즈 총정리</a
-        >
-      </div>
-      <div class="card card-body">
-        <a href="./begin" target="_self">coursera series - Digital Logic</a>
-      </div>
-      <div class="card card-body">
-        <a href="./Module-Introduction" target="_self"
-          >coursera series - Hardware</a
-        >
-      </div>
-      <div class="card card-body">
-        <a href="./OS" target="_self">coursera series - OS</a>
-      </div>
-      <div class="card card-body">
-        <a href="./networking" target="_self">coursera series - networking</a>
-      </div>
-      <div class="card card-body">
-        <a href="./software" target="_self">coursera series - software</a>
-      </div>
-    </div>
-
-    <li class="sidebar-group" role="menuitem">
-      <p
-        class="sidebar-heading"
-        data-bs-toggle="collapse"
         href="#collapse6"
         aria-expanded="false"
         aria-controls="collapse6"
         onclick="rotate(this)"
       >
-        <span class="sidebar-heading--name">Git</span>
+        <span class="sidebar-heading--name">CSS</span>
         <i class="fas fa-caret-right fa-xs"></i>
       </p>
     </li>
     <div class="collapse" id="collapse6">
-      <div class="card card-body">Hello</div>
-      <div class="card card-body">Hello2</div>
+      <div class="card card-body">
+        <a href="./CSS_begin" target="_self"
+          >CSS 기초 - block ~ Selector, state</a
+        >
+      </div>
+      <div class="card card-body">
+        <a href="./CSS_Advanced" target="_self"
+          >CSS Transition, transform, animation</a
+        >
+      </div>
+      <div class="card card-body">
+        <a href="./CSS_additional" target="_self"
+          >CSS Icon, Block Element Modifier, Font</a
+        >
+      </div>
+      <div class="card card-body">
+        <a href="./resetCSS" target="_self">reset CSS</a>
+      </div>
+      <div class="card card-body">
+        <a href="./cssbox" target="_self"
+          >CSS box, text-transformation, z-index, flex-children,
+          forwards-animation, will change</a
+        >
+      </div>
+      <div class="card card-body">
+        <a href="./textarea" target="_self"
+          >CSS autocomplete, textarea resize, div에 onclick줘서 링크걸기</a
+        >
+      </div>
+      <div class="card card-body">
+        <a href="./bootstrap" target="_self"
+          >bootstrap 요소 클래스이름 충돌 관련 이슈 정리</a
+        >
+      </div>
+      <div class="card card-body">
+        <a href="./collapse" target="_self">bootstrap collapse이용하기</a>
+      </div>
     </div>
 
     <li class="sidebar-group" role="menuitem">
@@ -457,8 +487,23 @@
       </p>
     </li>
     <div class="collapse" id="collapse7">
-      <div class="card card-body">Hello</div>
-      <div class="card card-body">Hello2</div>
+      <div class="card card-body">
+        <a href="./github_page" target="_self">github페이지 제작하기</a>
+      </div>
+      <div class="card card-body">
+        <a href="./git_command" target="_self">git 명령어 모음 (2021.02.08)</a>
+      </div>
+      <div class="card card-body">
+        <a href="./gitignore" target="_self"
+          >git 레포지토리 방문자 수 표시 (꾸미기)</a
+        >
+      </div>
+      <div class="card card-body">
+        <a href="./git_fetch" target="_self">git fetch & git pull</a>
+      </div>
+      <div class="card card-body">
+        <a href="./git_submodule" target="_self">git submodule 총정리</a>
+      </div>
     </div>
 
     <li class="sidebar-group" role="menuitem">
@@ -470,16 +515,42 @@
         aria-controls="collapse8"
         onclick="rotate(this)"
       >
-        <span class="sidebar-heading--name">Git</span>
+        <span class="sidebar-heading--name">Tools</span>
         <i class="fas fa-caret-right fa-xs"></i>
       </p>
     </li>
     <div class="collapse" id="collapse8">
-      <div class="card card-body">Hello</div>
-      <div class="card card-body">Hello2</div>
+      <div class="card card-body">
+        <a href="./vscode_shortcut" target="_self">vscode 단축키 모음</a>
+      </div>
+      <div class="card card-body">
+        <a href="./vscode_Prettier" target="_self">vscode prettier 셋업</a>
+      </div>
+      <div class="card card-body">
+        <a href="./jekyll" target="_self">Jekyll 기반 블로그 개설</a>
+      </div>
     </div>
 
     <li class="sidebar-group" role="menuitem">
+      <p
+        class="sidebar-heading"
+        data-bs-toggle="collapse"
+        href="#hufs"
+        aria-expanded="false"
+        aria-controls="hufs"
+        onclick="rotate(this)"
+      >
+        <span class="sidebar-heading--name">HUFS 모각코 기록</span>
+        <i class="fas fa-caret-right fa-xs"></i>
+      </p>
+    </li>
+    <div class="collapse" id="hufs">
+      <div class="card card-body">
+        <a href="./design" target="_self">2021.07 week2 </a>
+      </div>
+    </div>
+
+    <!-- <li class="sidebar-group" role="menuitem">
       <p
         class="sidebar-heading"
         data-bs-toggle="collapse"
@@ -495,25 +566,6 @@
     <div class="collapse" id="collapse9">
       <div class="card card-body">Hello</div>
       <div class="card card-body">Hello2</div>
-    </div>
-
-    <li class="sidebar-group" role="menuitem">
-      <p
-        class="sidebar-heading"
-        data-bs-toggle="collapse"
-        href="#collapse10"
-        aria-expanded="false"
-        aria-controls="collapse10"
-        onclick="rotate(this)"
-      >
-        <span class="sidebar-heading--name">HUFS 모각코 기록</span>
-        <i class="fas fa-caret-right fa-xs"></i>
-      </p>
-    </li>
-    <div class="collapse" id="collapse10">
-      <div class="card card-body">
-        <a href="./design" target="_self">2021.07 week2 </a>
-      </div>
-    </div>
+    </div>     -->
   </ul>
 </div>
