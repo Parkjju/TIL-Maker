@@ -3,15 +3,18 @@
 
   <div class="main_bar--right">
     <!-- 검색창 -->
-    <form action="" method="get" class="search-box">
+    <div class="search-box">
       <i class="fas fa-search"></i>
-      <input
-        class="search-form"
-        id="search-input"
-        type="text"
-        autocomplete="off"
-      />
-    </form>
+      <div class="search-box--result">
+        <input
+          class="search-form"
+          id="search-input"
+          type="search"
+          autocomplete="off"
+        />
+        <ul id="results-container"></ul>
+      </div>
+    </div>
 
     <!-- 링크버튼 -->
     <div
