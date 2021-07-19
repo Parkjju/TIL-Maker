@@ -143,3 +143,5 @@ exclude:
   - vendor
   - .travis.yml
   - node_modules
+
+g-analytics: G-PNZDBQS7P8
