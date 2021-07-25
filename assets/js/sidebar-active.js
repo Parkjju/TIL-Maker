@@ -8,7 +8,7 @@ for (var i = 0; i < alist.length; i++) {
   }
   pageurl = alist[i].childNodes[1].href;
   pageurlFilename = pageurl.substring(pageurl.lastIndexOf("/") + 1);
-  if (i === 5) {
+  if (alist[i].parentElement.id === "collapse4") {
     continue;
   } else {
     if (urlfilename === pageurlFilename) {
@@ -18,9 +18,9 @@ for (var i = 0; i < alist.length; i++) {
       ].parentNode.previousElementSibling.childNodes[1].childNodes[3].classList.add(
         "down"
       );
-      alist[i].parentNode.previousElementSibling.childNodes[1].classList.add(
-        "collapse"
-      );
+      //   alist[i].parentNode.previousElementSibling.childNodes[1].classList.add(
+      //     "collapse"
+      //   );
 
       alist[i].childNodes[1].classList.add("active");
     } else {

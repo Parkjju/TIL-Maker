@@ -67,7 +67,7 @@ td,
 article,
 aside,
 canvas,
-details,
+/* details, */
 embed,
 figure,
 figcaption,
@@ -79,7 +79,7 @@ nav,
 output,
 ruby,
 section,
-summary,
+/* summary, */
 time,
 mark,
 audio,
@@ -94,7 +94,7 @@ video {
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
-details,
+/* details, */
 figcaption,
 figure,
 footer,
