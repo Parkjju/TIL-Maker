@@ -14,7 +14,11 @@ function rotate(e) {
     for (var i = 0; i < group.length; i++) {
       if (group[i].classList.contains("active")) {
         group[i].classList.remove("active");
-        arrowGroup[i].classList.remove("down");
+        if (i >= 10) {
+          arrowGroup[i - 3].classList.remove("down"); // Python 사이드바 메뉴 순서에 따라 변경되는 점 유의!!!!!!
+        } else {
+          arrowGroup[i].classList.remove("down");
+        }
         // group[i].nextElementSibling.classList.remove("show");
         $(".show").collapse("hide");
       }
