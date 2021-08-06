@@ -145,3 +145,8 @@ figure {
     display: none;
   }
 }
+
+li > ul {
+  padding-left: 1rem;
+  margin-top: 0.3rem;
+}
