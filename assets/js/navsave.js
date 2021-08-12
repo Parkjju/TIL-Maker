@@ -19,60 +19,61 @@ var box = document.getElementsByClassName("main-post--titleLink");
 var title = $(":header");
 
 function titleLink() {
-  for (var i = 0; i < title.length; i++) {
-    var link = document.createElement("a");
-    link.innerText = "#";
-    if (i === 0) {
-      continue;
-    }
-    link.href = "#" + title[i].id;
+    for (var i = 0; i < title.length; i++) {
+        var link = document.createElement("a");
+        link.innerText = "#";
+        if (i === 0) {
+            continue;
+        }
+        link.href = "#" + title[i].id;
 
-    title[i].prepend(link);
-    title[i].style.position = "relative";
-    title[i].style.left = "-1rem";
-  }
+        title[i].prepend(link);
+        title[i].style.position = "relative";
+        title[i].style.left = "-1rem";
+    }
 }
 
 function titleBoxLink() {
-  for (var i = 0; i < title.length; i++) {
-    var link = document.createElement("a");
+    for (var i = 0; i < title.length; i++) {
+        var link = document.createElement("a");
 
-    if (i === 0) {
-      continue;
-    }
-    link.style.display = "block";
-    link.style.height = "auto";
-    link.href = "#" + title[i].id;
-    link.innerText = title[i].innerText;
-    link.style.lineHeight = "0.9rem";
-    if (title[i].tagName === "H3") {
-      link.style.position = "relative";
-      link.style.left = "0.5rem";
-    } else if (title[i].tagName === "H4") {
-      link.style.position = "relative";
-      link.style.left = "1rem";
-    } else if (title[i].tagName === "H5") {
-      link.style.position = "relative";
-      link.style.left = "1.5rem";
-    } else if (title[i].tagName === "H6") {
-      link.style.position = "relative";
-      link.style.left = "2rem";
-    }
+        if (i === 0) {
+            continue;
+        }
+        link.style.display = "block";
+        link.style.height = "auto";
+        link.href = "#" + title[i].id;
+        link.innerText = title[i].innerText;
+        link.style.lineHeight = "0.9rem";
+        if (title[i].tagName === "H3") {
+            link.style.position = "relative";
+            link.style.left = "0.5rem";
+        } else if (title[i].tagName === "H4") {
+            link.style.position = "relative";
+            link.style.left = "1rem";
+        } else if (title[i].tagName === "H5") {
+            link.style.position = "relative";
+            link.style.left = "1.5rem";
+        } else if (title[i].tagName === "H6") {
+            link.style.position = "relative";
+            link.style.left = "2rem";
+        }
 
-    link.style.marginBottom = "0.5rem";
-    box[0].appendChild(link);
-  }
+        link.style.marginBottom = "0.5rem";
+        box[0].appendChild(link);
+    }
 }
 titleBoxLink();
 titleLink();
 
 function addHeight() {
-  for (var i = 0; i < box[0].length; i++) {
-    box[0].style.height += box[0].childNodes[i].offsetHeight;
-  }
+    for (var i = 0; i < box[0].length; i++) {
+        box[0].style.height += box[0].childNodes[i].offsetHeight;
+    }
 }
 if (box[0].offsetHeight > 320) {
-  box[0].style.height = "20rem";
+    box[0].style.height = "20rem";
 }
 
 addHeight();
+box[0].style.overflowX = "hidden";
