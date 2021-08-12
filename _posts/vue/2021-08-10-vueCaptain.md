@@ -681,6 +681,7 @@ new Vue =({
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- axios 오픈소스 CDN -->
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
     new Vue({
@@ -705,3 +706,5 @@ new Vue =({
     });
 </script>
 ```
+
+-   [jsonplaceholder : 데이터 통신 및 기능구현 테스트 위한 샘플 사이트](https://jsonplaceholder.typicode.com/)
