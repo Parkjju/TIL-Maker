@@ -708,3 +708,419 @@ new Vue =({
 ```
 
 -   [jsonplaceholder : 데이터 통신 및 기능구현 테스트 위한 샘플 사이트](https://jsonplaceholder.typicode.com/)
+
+## 7. 템플릿 문법
+
+-   뷰에서 화면을 조작할 수 있는 문법
+
+### 7.1 데이터 바인딩
+
+-   데이터 바인딩은 뷰 인스턴스에서 정의한 속성들을 표시하는 방법
+
+```html
+<div>Hello {{ message }} !</div>
+```
+
+-   디렉티브 : (v-가 붙는 문법들) 뷰로 화면을 조작하는데 편의를 제공하는 문법
+
+```html
+<body>
+    <div id="app">
+        <p v-bind:class="name"></p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                name: "text-blue",
+            },
+        });
+    </script>
+</body>
+```
+
+-   데이터 바인딩을 통해 id값은 물론 클래스까지 바인딩 할 수 있다.
+-   `v-bind:id = "프로퍼티 값 이름"`, `v-bind:class = "프로퍼티 값 이름"`
+
+**참고**
+
+-
+
+### 7.2 computed 속성
+
+```html
+<body>
+    <div id="app">
+        <p>{{num}}</p>
+        <p>{{doubleNum}}</p>
+        {{str}}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                str: "hi~!",
+                num: 10,
+            },
+            computed: {
+                doubleNum: function () {
+                    return this.num * 2;
+                },
+            },
+        });
+    </script>
+</body>
+```
+
+1. 뷰 인스턴스의 data 속성에 num을 정의한다.
+2. data속성에 doubleNum이라는 값으로 기존 data프로퍼티의 값을 조작하면 에러가 발생
+3. **computed 프로퍼티를 새로 생성하여** 해당 프로퍼티의 값으로 함수를 할당한다.
+
+### 7.3 methods속성과 v-on 디렉티브를 이용한 키보드,마우스 이벤트 처리
+
+1. 뷰 인스턴스 생성
+2. methods 프로퍼티 - methods할당
+3. 컴포넌트에 `v-on:methodName` 지정해주면 methods 프로퍼티의 함수가 실행된다
+
+```html
+<div id="app">
+    <button v-on:click="logText">Click me</button>
+    <input type="text" v-on:keyup="logText" />
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        methods: {
+            logText: function () {
+                console.log("clicked");
+            },
+        },
+    });
+</script>
+```
+
+-   `v-on:event이름 = "methodsName"`
+
+*   `v-on:event이름.Modifier = "MethodsName` -> modifier(이벤트의 특정 상황)
+
+### 7.4 watch속성
+
+-   데이터 속성 중 특정 값에 변화를 줄때 특정 로직을 실행하기 위해 사용하는 속성.
+
+```html
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            num: 10,
+        },
+        watch: {
+            num: function () {
+                this.logText();
+            },
+        },
+        methods: {
+            addNum: function () {
+                this.num = this.num + 1;
+            },
+            logText: function () {
+                console.log("changed");
+            },
+        },
+    });
+</script>
+```
+
+1. data 속성에 num을 할당
+2. watch속성 정의 -> 값의 변화를 지켜볼 데이터 선택 (num을 선택하였음)
+3. watch하다가 값의 변화가 일어날 때 수행할 메소드 선택 (this.method로 선택해야함!)
+
+-   computed vs watch
+
+    1. 두 프로퍼티 모두 값의 변화를 실시간으로 추적한다.
+    2. computed는 단순 값의 계산 로직구현에 적합하다
+    3. watch는 이보다 더 무거운 로직 구현에 적합하다(데이터 요청 등)
+
+-   데이터 변화에 대한 로직 구현은 웬만하면 computed속성으로 하는 것이 좋다.
+
+-   [computed vs watch property](https://vuejs.org/v2/guide/computed.html#ad)
+
+```html
+<!-- using watch -->
+<script>
+    var vm = new Vue({
+        el: "#demo",
+        data: {
+            firstName: "Foo",
+            lastName: "Bar",
+            fullName: "Foo Bar",
+        },
+        watch: {
+            firstName: function (val) {
+                this.fullName = val + " " + this.lastName;
+            },
+            lastName: function (val) {
+                this.fullName = this.firstName + " " + val;
+            },
+        },
+    });
+</script>
+<script>
+    // using computed
+    var vm = new Vue({
+        el: "#demo",
+        data: {
+            firstName: "Foo",
+            lastName: "Bar",
+        },
+        computed: {
+            fullName: function () {
+                return this.firstName + " " + this.lastName;
+            },
+        },
+    });
+</script>
+```
+
+-   watch속성을 너무 자주 이용하게 되면 변화가 이루어질 데이터 모두에게 함수를 할당시켜야 하기 때문에 코드가 너저분해진다.
+
+### 7.5 computed 속성을 이용한 클래스 코드 작성 팁
+
+```html
+<div id="app">
+    <p v-bind:class="{ warning: isError }">Hello</p>
+</div>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            isError: true,
+        },
+    });
+</script>
+```
+
+1. bind 디렉티브를 통해 인스턴스의 data프로퍼티 값을 가져온다.
+2. data에서 가져온 값은 isError로 Boolean 값이다.
+3. `v-bind:class="{ className: Boolean }"` -> Boolean True or False 여부에 따라서, v-bind 디렉티브를 준 컴포넌트에 클래스가 할당될지 안될지 결정된다.
+
+-   데이터 바인딩 시 직접 클래스에 코드를 기입해도 되지만, 이는 깔끔하지 못한 코드이다. -> **computed속성을 이용**
+    1. computed속성에 데이터 바인딩시 작동시킬 메소드를 만든다. -> Boolean값에 따라 뿌려주는 클래스가 다르다는 로직 -> 메소드에서 삼항연산자를 이용
+    2. 컴포넌트에 클래스로 computed의 메소드를 전달.
+
+````html
+<div id="app">
+    <p v-bind:class="errorTextColor">Hello</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    new Vue({
+        el: "#app",
+        data: {
+            isError: true,
+        },
+        computed: {
+            errorTextColor: function () {
+                return this.isError ? "warning" : null;
+            },
+        },
+    });
+</script>
+```
+````
+
+## 8. Vue cli
+
+-   vue CLI 설치 이전, npm과 node 설치 및 설정을 진행한다.(vscode 개발환경 구축)
+-   [node 환경변수 설정](https://www.daleseo.com/js-node-process-env/)
+-   설치 후 무조건 껐다 켜기!!
+-   [cli.vuejs](https://cli.vuejs.org/guide/installation.html) -> vue CLI 설치 공식 사이트
+
+1. Vue CLI 설치
+2. `vue create directoryName` 뷰 프로젝트 생성
+3. 일단은 Default로 설정 후 설치 진행
+4. 생성된 프로젝트 폴더로 들어간 뒤 `npm run serve` -> 로컬 서버에서 서비스 구현
+
+### 8.1 CLI로 생성한 프로젝트 폴더 구조 확인 및 main.js파일 설명
+
+-   `npm run serve`로 실행되는 기본적인 파일
+    1. public폴더의 index.html
+    2. src 폴더의 `main.js` -> 그 동안 실습시간에 만들었던 script태그의 뷰 인스턴스들이 저장된다.
+
+### 8.2 싱글 파일 컴포넌트
+
+1. vue 확장자로 파일 하나 생성
+2. vue 앱 내에서 `vue`를 입력하면 자동완성 기능으로 기본 구조를 잡아준다.
+
+```vue
+<template>
+    <div>header</div>
+</template>
+
+<script>
+export default {
+    methods: {
+        addNum: function () {
+            // ...
+        },
+    },
+};
+</script>
+
+<style></style>
+```
+
+-   html, js, css를 한 파일에서 관리하겠다는 것이 싱글파일 컴포넌트이다.
+
+*   기존 html파일 내에서 template프로퍼티를 뷰 인스턴스에 추가하기 위해 객체를 하나 생성하여 할당하였는데, 더 이상 그렇게 하지 않아도 됨.
+    -   a. 싱글 파일 컴포넌트에서 template태그 안에 컴포넌트를 만든다.
+    -   b. 싱글 파일 컴포넌트의 script태그에서 js문법을 제외하고 각종 뷰 인스턴스 프로퍼티를 정의한다.
+    -   c. css정의
+
+### 8.3 App.vue
+
+```vue
+<template>
+    <div id="app">
+        <img alt="Vue logo" src="./assets/logo.png" />
+        <HelloWorld msg="Welcome to Your Vue.js App" />
+    </div>
+</template>
+
+<script>
+import HelloWorld from "./components/HelloWorld.vue";
+
+export default {
+    name: "App",
+    components: {
+        HelloWorld,
+    },
+};
+</script>
+```
+
+-   template
+    1. `<HelloWorld msg="Welcome to Your Vue.js App/"/>` === `<hello-world></hello-world>` === `<HelloWorld></HelloWorld>`
+-   script
+
+    1. `components: { HelloWorld }` === `components: {'hello-world': Helloworld}`
+
+-   export default 내에 인스턴스 옵션 속성 또는 컴포넌트 옵션 속성을 넣어준다고 생각하면 됨!
+
+```vue
+<script>
+export default {
+    name: "HelloWorld",
+    props: {
+        msg: String,
+    },
+};
+</script>
+```
+
+-   components폴더의 HelloWorld.vue -> `props: ['msg']`라고 기존에 정의해왔던 것에 String이라는 타입을 붙여준 것
+
+## 9. 싱글 파일 컴포넌트
+
+-   싱글 파일 컴포넌트에는 루트 템플릿이 하나만 있어야 한다. 템플릿 내에 루트로 형제 컴포넌트가 존재하면 안됨
+
+```text
+[vue/no-multiple-template-root]
+The template root requires exactly one element.eslint-plugin-vue
+```
+
+-   vue 최신 문법에 따라, export default 내에서는 객체 리터럴을 직접 생성하여 할당하면 안된다. 재사용성 확대를 위해 프로퍼티에 함수 생성 및 객체를 리턴해야한다.
+
+```vue
+<script>
+export default {
+    data: function () {
+        return {
+            str: "hi",
+        };
+    },
+};
+</script>
+```
+
+### 9.1 싱글 파일 컴포넌트 체계에서 컴포넌트 등록하기
+
+-   일반적으로 vue프로젝트 생성 후 새로 생성하는 컴포넌트는 components폴더 아래에 Pascal-case로 파일명을 작성하여 생성한다.
+-   스타일 가이드에서는 컴포넌트 이름이 기존 html태그의 이름과 중복되지 않도록 하기 위해 최소한 두 단어 이상으로 만들기를 권고하고있다.
+
+-   components폴더에 컴포넌트 생성 및 App.vue에 등록하기
+    1. components 생성
+    2. App.vue에서 script태그에 생성한 컴포넌트.vue파일을 import해준다.
+    3. export default에서 components 프로퍼티 정의 후 컴포넌트 등록을 진행한다. `components: {'component-name': import한 컴포넌트 이름}`
+
+```vue
+<template>
+    <div>
+        <app-header></app-header>
+    </div>
+</template>
+
+<script>
+// App.vue
+import AppHeader from "./components/AppHeader.vue";
+export default {
+    data: function () {
+        return {
+            str: "hihihi",
+        };
+    },
+    components: {
+        "app-header": AppHeader,
+    },
+};
+</script>
+```
+
+-   `./components/AppHeader.vue`라는 파일을 추적하여 AppHeader라는 변수에 저장한다고 생각하면 됨!
+
+### 9.2 싱글 파일 컴포넌트에서 props 속성 사용하는 방법
+
+1. 생성한 하위 컴포넌트에서 props속성 정의
+2. methods 속성에 상위 컴포넌트로 보낼 메소드를 정의 ($emit 이용!)
+3. 하위 컴포넌트 템플릿에서 이벤트를 받아서 상위 컴포넌트로 보낸다.
+
+```vue
+<template>
+    <header>
+        <h1>{{ propsdata }}</h1>
+        <button v-on:click="sendEvent">send</button>
+    </header>
+</template>
+
+<script>
+export default {
+    props: ["propsdata"],
+    methods: {
+        sendEvent: function () {
+            this.$emit("renew");
+        },
+    },
+};
+</script>
+```
+
+1. App.vue에서 데이터를 받는 상황 -> 데이터 받는 태그에 `v-on:emit에 전달한 이벤트 이름="상위 컴포넌트에서 데이터 받을 메소드 이름"`
+2. 메소드 정의 후 이벤트 처리
+
+### 9.3 props & event emit 정리
+
+<figure>
+<img src="./assets/images/props.jpg" height="80%" width="80%" />
+<figcaption>props</figcaption>
+</figure>
+<figure>
+<img src="./assets/images/eventemit.jpg" height="80%" width="80%"/>
+<figcaption>event emit</figcaption>
+</figure>
